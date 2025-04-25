@@ -1,7 +1,10 @@
 ## Dependencias
 
-### Expo
+### Frontend Expo
 https://snack.expo.dev/@alexander.siguenza/guia11-api-crud-railway
+
+### API Railway.
+https://apimarket-production-10e5.up.railway.app/
 
 Este proyecto utiliza las siguientes dependencias:
 - **express**: Framework web minimalista para Node.js.
