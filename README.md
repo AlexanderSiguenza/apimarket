@@ -1,7 +1,9 @@
 ## Dependencias
 
-Este proyecto utiliza las siguientes dependencias:
+### Expo
+https://snack.expo.dev/@alexander.siguenza/guia11-api-crud-railway
 
+Este proyecto utiliza las siguientes dependencias:
 - **express**: Framework web minimalista para Node.js.
 - **mysql2**: Cliente para conectarse a bases de datos MySQL con soporte para promesas.
 - **body-parser**: Middleware para analizar el cuerpo de las solicitudes HTTP.
