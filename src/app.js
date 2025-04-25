@@ -1,4 +1,4 @@
-import express from 'express'
+import express from 'express';
 import marketRoutes from './routes/market.routes.js'
 
 const app=express()
