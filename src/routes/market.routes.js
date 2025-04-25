@@ -1,25 +1,35 @@
-import Router from 'express'
-import { getUsuarios, getUsuario, getProductos, postProductos, putProductos,deleteProductos,getProductosId } from '../controllers/market.controllers.js';
+// src/routes/market.routes.js
+import { Router } from 'express';
+import {
+  getUsuarios,
+  getUsuario,
+  getProductos,
+  postProductos,
+  putProductos,
+  deleteProductos,
+  getProductosId,
+} from '../controllers/market.controllers.js';
 
-const router=Router()
+const router = Router();
 
-// Ruta para consultar usuarios
-router.get('/usuarios',getUsuarios);
+// Rutas para productos
+router.get('/productos', (req, res, next) => {
+  console.log('Endpoint /productos alcanzado');
+  next();
+}, getProductos);
 
-//Ruta para consultar productos
-router.get('/productos',getProductos);
+router.get('/productos/:id', (req, res, next) => {
+  console.log('Endpoint /productos/:id alcanzado');
+  next();
+}, getProductosId);
 
-//Ruta para consultar productos ID
-router.get('/productos/:id',getProductosId);
-
-// Ruta para iniciar sesión (Login)
+// Rutas para usuarios
+router.get('/usuarios', getUsuarios);
 router.post('/usuarios/login', getUsuario);
 
-//Ruta para ingresar producto
-router.post('/productos',postProductos);
-//Ruta para actualizar producto
+// Rutas de CRUD para productos
+router.post('/productos', postProductos);
 router.put('/productos/:id', putProductos);
-//Ruta para eliminar producto
 router.delete('/productos/:id', deleteProductos);
 
-export default router
+export default router;
