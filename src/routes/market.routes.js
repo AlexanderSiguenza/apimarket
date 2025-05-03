@@ -3,6 +3,9 @@ import { Router } from 'express';
 import {
   getUsuarios,
   getUsuario,
+  postUsuarios,
+  putUsuarios,
+  deleteUsuarios,
   getProductos,
   postProductos,
   putProductos,
