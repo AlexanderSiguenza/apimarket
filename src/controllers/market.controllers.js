@@ -27,7 +27,7 @@ export const getUsuario = async (req, res) => {
 
 export const postUsuarios = async (req, res) => {
   try {
-    const { name, description, price_cost, price_sale, quantity, image } = req.body;
+    const { nombre, correo, clave} = req.body;
 
     // 1. Consultamos el último ID en la base de datos
     const [result] = await pool.query("SELECT MAX(id) AS last_id FROM usuarios");
@@ -38,15 +38,15 @@ export const postUsuarios = async (req, res) => {
 
     // 3. Insertamos el nuevo producto con el ID incrementado
     const [insertResult] = await pool.query(
-      "INSERT INTO usuarios (id, nombre, descripcion, precio_costo, precio_venta, cantidad, fotografia) VALUES (?, ?, ?, ?, ?, ?, ?)", 
-      [newId, name, description, price_cost, price_sale, quantity, image]
+      "INSERT INTO usuarios (id, nombre, correo, clave) VALUES (?, ?, ?, ?)", 
+      [newId, nombre, correo, clave]
     );
 
     // 4. Verificamos si la inserción fue exitosa
     if (insertResult.affectedRows > 0) {
-      res.json({ message: "Producto Agregado", id: newId });
+      res.json({ message: "Usuario Agregado", id: newId });
     } else {
-      res.status(404).json({ message: "No se ingresó el producto" });
+      res.status(404).json({ message: "No se ingresó el usuario" });
     }
 
   } catch (error) {
