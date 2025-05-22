@@ -6,6 +6,9 @@ https://snack.expo.dev/@alexander.siguenza/guia11-api-crud-railway
 ### API Railway.
 https://apimarket-production-10e5.up.railway.app/
 
+### Documentacion deepwiki
+https://deepwiki.com/AlexanderSiguenza/apimarket
+
 Este proyecto utiliza las siguientes dependencias:
 - **express**: Framework web minimalista para Node.js.
 - **mysql2**: Cliente para conectarse a bases de datos MySQL con soporte para promesas.
